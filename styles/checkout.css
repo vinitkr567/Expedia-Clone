@@ -1,0 +1,80 @@
+ 
+  #cvv {
+    width: 70%;
+    border: 1px solid;
+  }
+  .btn {
+    width: 50%;
+    background-color: orange;
+    font-size: 20px;
+    color: aliceblue;
+    cursor: pointer;
+    margin: auto;
+    height: 40px;
+  }
+  
+  span {
+    font-family: sans-serif;
+  }
+  #month1 {
+    width: 70px;
+  }
+  .card {
+    font-family: sans-serif;
+    font-weight: 600;
+  }
+  .input{
+    width: 70%;
+    border: 1px solid;
+  }
+  #month1{
+    height: 35px;
+  }
+  
+  #border1 {
+    width: 100%;
+    text-align: center;
+    margin-left: 10%;
+  }
+  
+  #logoPay {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2%;
+    width: 100%;
+  }
+  
+  #logoPay > div {
+    width: 30%;
+    margin-left: 4px;
+  }
+  
+  #logoPay > div > img {
+    width: 60%;
+    height: 100%;
+  }
+  
+  
+  #ways {
+    color: #3d464d;
+    font-size: 20px;
+    font-family: "ProximaNova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 0px;
+    text-align: center;
+  }
+  #mainDiv {
+    display: flex;
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #rightBox {
+    width: 100%;
+  }
+  #leftBox {
+    width: 100%;
+  }
+  

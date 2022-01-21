@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="./styles/flights.css"> -->
+    <style>
+        input {
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 8px;
+            margin: 6px;
+
+        }
+
+        #nav {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 2%;
+            color: darkslateblue;
+            font-weight: bold;
+            align-items: center;
+            width: 90%;
+            margin: auto;
+        }
+
+        #navSide {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        /* hr {
+            height: 2px solid silver;
+            width: 90%;
+            margin: auto;
+        } */
+
+        #main {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            text-align: center;
+        }
+
+        form {
+            width: 24%;
+            margin: auto;
+        }
+
+        input[type=submit] {
+            width: 40%;
+            padding: 8px;
+            margin: 8px;
+            box-sizing: border-box;
+            border: 1px solid silver;
+            border-radius: 8px;
+            background-color: burlywood;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <hr>
+    <div id="main">
+        <div>
+            <h1>New User</h1>
+            <form onsubmit="Register(event)">
+                <input type="text" id="name" placeholder="Enter Name" />
+                <input type="email" id="email" placeholder="Enter Email" />
+                <input type="text" id="username" placeholder="Enter UserName" />
+                <input type="password" id="password" placeholder="Enter Password" />
+                <input type="number" id="mobile" placeholder="Enter mobile" />
+
+                <input type="text" id="description" placeholder="Enter Description" />
+                <br>
+                <input type="submit" />
+            </form>
+        </div>
+        <div>
+            <h1>Existing User</h1>
+            <form onsubmit="login(event)">
+                <input type="text" id="username-login" placeholder="Enter username" />
+                <input type="password" id="password-login" placeholder="Enter Password" />
+                <br>
+                <input type="submit" />
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    //https://github.com/masai-school/api-mocker/wiki/Authentication-API
+    //api Link - https://masai-api-mocker.herokuapp.com/
+
+    //register url - https://masai-api-mocker.herokuapp.com/auth/register
+    //login url - https://masai-api-mocker.herokuapp.com/auth/login
+
+    async function Register(e) {
+        try {
+            e.preventDefault();
+            var register_data = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                username: document.getElementById("username").value,
+                mobile: document.getElementById("mobile").value,
+                description: document.getElementById("description").value,
+            };
+            register_data = JSON.stringify(register_data);
+            console.log("register_data:-", register_data);
+        }
+        catch (error) {
+            console.log("error");
+        }
+
+        let reg_api = `https://masai-api-mocker.herokuapp.com/auth/register`
+
+        let response = await fetch(reg_api, {
+            method: "POST",
+            body: register_data,
+
+            headers: {
+                "content-Type": "application/json",
+            }
+        });
+        let data = await response.json();
+        console.log("data:-", data);
+
+        window.location.href = "stays.html"
+    }
+
+
+    async function login(e) {
+        e.preventDefault();
+        let login_data = {
+            username: document.getElementById("username-login").value,
+            password: document.getElementById("password-login").value,
+        }
+        login_data = JSON.stringify(login_data);
+
+        let login_url = `https://masai-api-mocker.herokuapp.com/auth/login`;
+        let response = await fetch(login_url, {
+            method: "POST",
+            body: login_data,
+
+            headers: {
+                "content-Type": "application/json",
+            }
+        });
+        let data = await response.json();
+        console.log("data:-", data);
+
+        let username = document.getElementById("username-login").value;  //login_data.username;
+        getUser(username, data.token)
+    }
+
+    async function getUser(username, token) {
+        var api = `https://masai-api-mocker.herokuapp.com/user/${username}`
+
+        let response = await fetch(api, {
+            headers: {
+                "content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+
+        })
+        let data = await response.json();
+        console.log("data-", data);
+    }
+</script>
+
+<script type="module">
+
+    import navbar from './components/navbar.js';
+    //console.log("nab", navbar);
+    let container = document.getElementById("container");
+    container.innerHTML = navbar();
+</script>

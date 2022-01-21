@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button onclick="getData()">click</button>
+</body>
+
+</html>
+<script>
+
+  async function getData() {
+    try {
+      let url = "https://best-booking-com-hotel.p.rapidapi.com/booking/best-accommodation?cityName=Patna&countryName=India"
+      let res = await fetch(url);
+
+      let data = await res.json();
+      console.log(data);
+    } catch (error) {
+      console.log("Error from data retrieval");
+    }
+  }
+
+
+
+
+
+  var patnaToBangalore = [
+    {
+      rupeeSign: "₹",
+      price: 7279,
+      name: "Go First",
+      t1: "14:45",
+      t1: "16:45",
+      avb: "Direct",
+      p1: "patna",
+      p2: "bangalore"
+    },
+    {
+      rupeeSign: "₹",
+      price: 7279,
+      name: "Vistara",
+      t1: "12:15",
+      t1: "16:45",
+      avb: "1 Stop",
+      p1: "patna",
+      p2: "bangalore"
+    },
+    {
+      rupeeSign: "₹",
+      price: 7279,
+      name: "Indigo",
+      t1: "14:45",
+      t1: "16:45",
+      avb: "Direct",
+      p1: "patna",
+      p2: "bangalore"
+    },
+
+  ];
+</script>
+
+
+
+
+

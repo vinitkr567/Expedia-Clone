@@ -1,0 +1,201 @@
+#nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 2%;
+  color: darkslateblue;
+  font-weight: bold;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+#navSide {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+hr {
+  height: 2px solid silver;
+  width: 90%;
+  margin: auto;
+}
+
+#search {
+  width: 90%;
+  height: auto;
+  border: 1.5px solid silver;
+  margin: auto;
+  margin-top: 30px;
+}
+input{
+  width: 25%;
+  margin-right: 3%;
+  padding: 8px;
+  border: 2px solid;
+}
+#navOption {
+  padding-left: 5%;
+  border: none;
+  margin-top: 10px;
+  vertical-align: top;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#navOption>option {
+  border: none;
+  visibility: inherit;
+}
+
+#changes {
+  width: 87%;
+  height: auto;
+  background-color: whitesmoke;
+  margin: auto;
+  border-radius: 5px;
+  padding: 10px;
+  padding-left: 30px;
+  line-height: 12px;
+}
+
+#scan {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+  width: 90%;
+  margin: auto;
+  gap: 2%;
+  height: 280px;
+}
+
+/* #s1 {
+  border: 1px solid red;
+} */
+
+#code {
+  border: 1px solid red;
+  text-align: center;
+  padding-top: 20%;
+  font-weight: bold;
+}
+
+#s2>h1 {
+  font-size: 34px;
+  line-height: 12px;
+}
+
+#sI {
+  margin: auto;
+  width: 80%;
+}
+
+#im2 {
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  width: 90%;
+  gap: 3%;
+  margin: auto;
+}
+
+body {
+  text-align: center;
+  color: black;
+}
+
+#footer {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: auto;
+  gap: 2%;
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+#footer>div {
+  width: 18%;
+  padding: 8px;
+  color: black;
+}
+
+#lim {
+  width: 20%;
+  margin: auto;
+}
+
+#lasp {
+  width: 90%;
+  margin: auto;
+  font-size: 12px;
+}
+
+#country {
+  width: 30%;
+  padding: 5px;
+  font-weight: bold;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  gap: 2.5%;
+  align-items: center;
+}
+
+.bigI {
+  background-image: url('https://a.travel-assets.com/travel-assets-manager/ux-887/Global-HP-Hero-928x398.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#loginbtn{
+  width: auto;
+  height: 35px;
+  border-radius: 8px;
+  color: blueviolet;
+}
+.radio-btn{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#getApp{
+  width: auto;
+  height: 35px;
+  border-radius: 8px;
+  color: white;
+  border: 1px solid green;
+  background-color: blue;
+  padding: 10px;
+  font-weight: bold;
+}
+
+#aero{
+  border: 1px solid paleturquoise; 
+  height: auto; 
+  width: 90%;
+  margin: auto;
+  background-color: silver;
+  gap: 10px;
+}
+#mainDiv{
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  text-align: left;
+  gap: 2%;
+  background-color: white;
+}
+#bookingBtn{
+  width: 60%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 8px;
+  background-color: blue;
+  color: white;
+  border-radius: 8px;
+}
