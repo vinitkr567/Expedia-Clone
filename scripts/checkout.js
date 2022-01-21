@@ -31,7 +31,7 @@ document.querySelector("#btn").addEventListener("click", function () {
     localStorage.setItem("cwp1", JSON.stringify(dataArr));
     alert("Order Booked");
     localStorage.removeItem("cartStorageData");
-    window.location.href = "stays.html";
+    window.location.href = "index.html";
   }
 });
 function payment() {
