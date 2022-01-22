@@ -79,7 +79,7 @@
                 <input type="password" id="password" placeholder="Enter Password" />
                 <input type="number" id="mobile" placeholder="Enter mobile" />
 
-                <input type="text" id="description" placeholder="Enter Description" />
+                <!-- <input type="text" id="description" placeholder="Enter Description" /> -->
                 <br>
                 <input type="submit" />
             </form>
@@ -113,7 +113,7 @@
                 password: document.getElementById("password").value,
                 username: document.getElementById("username").value,
                 mobile: document.getElementById("mobile").value,
-                description: document.getElementById("description").value,
+                // description: document.getElementById("description").value,
             };
             register_data = JSON.stringify(register_data);
             console.log("register_data:-", register_data);
@@ -161,6 +161,7 @@
 
         let username = document.getElementById("username-login").value;  //login_data.username;
         getUser(username, data.token)
+        window.location.href = "index.html"
     }
 
     async function getUser(username, token) {
