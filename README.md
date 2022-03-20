@@ -10,4 +10,4 @@
   
 <p> I have learned that we can do challenging tasks just by doing good research on that. I have learned a lot how to manage time to do a task. How do we do a task in a flow. where I stuck and how to get rid of time.</p>
   
-  `View project here:` https://github.com/vinitkr567/Expedia-Clone
+  `View project here:` https://expediabyvinit.netlify.app/
